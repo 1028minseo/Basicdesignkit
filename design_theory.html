@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>디자인 이론 · 디자인 기초 키트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#EEF1F6;--surface:#fff;--ink:#14213D;--muted:#55607A;--line:#CBD3E1;--accent:#2B4BFF;--pop:#FFD23F;box-sizing:border-box}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0F1524;--surface:#18203A;--ink:#EEF1F8;--muted:#A5AFC7;--line:#2C3757;--accent:#7C93FF;--pop:#FFD23F}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR",system-ui,sans-serif;line-height:1.75;word-break:keep-all}
+.wrap{max-width:1040px;margin:auto;padding:28px 20px 72px}
+.back{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:2px solid var(--ink);border-radius:6px;color:var(--ink);text-decoration:none;font-weight:700;background:var(--surface)}
+.back:hover{background:var(--pop);color:#14213D}
+.hero{padding:42px 0 24px}
+.eyebrow{font-size:13px;font-weight:900;letter-spacing:.12em;color:var(--accent)}
+h1{margin:6px 0 10px;font-size:clamp(38px,8vw,72px);line-height:1.12;letter-spacing:-.04em;font-weight:900}
+.lead{max-width:680px;color:var(--muted);font-size:16px;margin:0}
+.nav{position:sticky;top:8px;z-index:5;display:flex;gap:8px;flex-wrap:wrap;padding:10px;margin:14px 0 36px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:9px}
+.nav a{flex:1;min-width:125px;text-align:center;text-decoration:none;color:var(--ink);background:var(--surface);border:1.5px solid var(--ink);border-radius:6px;padding:9px 12px;font-size:14px;font-weight:700}
+.nav a:hover,.nav a:focus{background:var(--pop);color:#14213D}
+section{scroll-margin-top:90px;margin:0 0 52px}
+.section-head{display:flex;align-items:flex-end;gap:14px;margin-bottom:18px}
+.section-no{display:grid;place-items:center;flex:0 0 46px;height:46px;border:2px solid var(--ink);border-radius:50%;background:var(--pop);font-weight:900;font-size:19px;color:#14213D}
+h2{font-size:clamp(25px,5vw,36px);line-height:1.25;margin:0;font-weight:900;letter-spacing:-.03em}
+.section-sub{margin:6px 0 0;color:var(--muted);font-size:14px}
+.panel{background:var(--surface);border:2px solid var(--ink);border-radius:9px;padding:clamp(18px,4vw,28px);margin:14px 0}
+.panel h3{font-size:21px;line-height:1.35;margin:0 0 10px;font-weight:900}
+.panel p{margin:8px 0 0}
+.callout{margin-top:16px;padding:14px 16px;border-left:5px solid var(--accent);background:var(--bg);border-radius:0 6px 6px 0;font-weight:700}
+.color-ratio{display:grid;grid-template-columns:6fr 3fr 1fr;gap:7px;margin:20px 0 10px;min-height:104px}
+.color-ratio div{display:flex;align-items:center;justify-content:center;text-align:center;border:2px solid var(--ink);border-radius:6px;padding:10px;font-weight:900}
+.dominant{background:#DCE7FF;color:#14213D}.secondary{background:#718CCB;color:#fff}.accent{background:#FFD23F;color:#14213D}
+.ratio-labels{display:grid;grid-template-columns:6fr 3fr 1fr;gap:7px;font-size:12px;color:var(--muted);text-align:center}
+.timeline{position:relative;display:grid;gap:0;margin-top:12px}
+.event{display:grid;grid-template-columns:minmax(105px,155px) 1fr;gap:16px;padding:17px 0;border-bottom:1px solid var(--line)}
+.event:last-child{border-bottom:0}
+.year{font-weight:900;color:var(--accent);font-size:15px}
+.event h3{margin:0 0 4px;font-size:17px}
+.event p{margin:0;color:var(--muted);font-size:14px}
+.examples{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.example{background:var(--bg);border:1.5px solid var(--line);border-radius:7px;padding:16px}
+.example .tag{display:inline-block;padding:3px 8px;border-radius:4px;background:var(--pop);color:#14213D;font-size:12px;font-weight:900;margin-bottom:9px}
+.example h3{font-size:18px;margin:0 0 7px}
+.example p{font-size:14px;margin:0;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px}
+@media(max-width:650px){.wrap{padding:18px 15px 52px}.nav{position:static}.nav a{min-width:calc(50% - 8px)}.event{grid-template-columns:1fr;gap:3px}.examples{grid-template-columns:1fr}.color-ratio{min-height:90px}.color-ratio div{font-size:12px;padding:5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body><nav class="site-nav" aria-label="사이트 전체 메뉴">
+<a href="index.html">홈</a><a href="layout_grid.html">레이아웃 그리드</a><a href="design_theory.html">디자인 이론</a><a href="design_assets.html">디자인 에셋</a><a href="external_sites.html">외부 사이트</a>
+</nav>
+<style>
+.site-nav{display:flex;flex-wrap:wrap;gap:8px;max-width:1040px;margin:18px auto 0;padding:0 20px}
+.site-nav a{display:inline-block;padding:8px 13px;border:1px solid var(--line,#CBD3E1);border-radius:999px;text-decoration:none;color:var(--ink,#14213D);font-size:13px;background:var(--surface,#fff)}
+.site-nav a:hover{background:var(--accent,#2B4BFF);color:#fff}
+@media(max-width:560px){.site-nav{gap:6px}.site-nav a{font-size:12px;padding:7px 10px}}
+</style>
+<div class="wrap">
+  <a class="back" href="index.html">← 처음으로</a>
+  <header class="hero">
+    <div class="eyebrow">DESIGN BASIC KIT · THEORY</div>
+    <h1>디자인 이론</h1>
+    <p class="lead">좋은 디자인은 감각만으로 완성되지 않습니다. 여백과 통일성, 균형과 정렬부터 디자인의 역사와 시각 언어까지 핵심 개념을 살펴봅니다.</p>
+  </header>
+  <nav class="nav" aria-label="페이지 목차">
+    <a href="#principles">01 기본 원리</a>
+    <a href="#history">02 디자인의 역사</a>
+    <a href="#art">03 미술사와 현대 디자인</a>
+  </nav>
+
+  <section id="principles">
+    <div class="section-head"><span class="section-no">01</span><div><h2>디자인의 기본 원리</h2><p class="section-sub">정보를 더 잘 전달하기 위한 세 가지 기준</p></div></div>
+    <article class="panel">
+      <h3>여백 · 여유가 만드는 전달력</h3>
+      <p>디자인에서 여백은 중요한 요소 중 하나입니다. 마진이라고도 하는 여백은 보는 사람이 글이나 이미지를 보다 여유롭게 인식할 수 있게 해줍니다.</p>
+      <p>정보를 전달하려면 무조건 빽빽하게, 최대한 많은 내용을 채워 넣어야 한다고 생각하기 쉽지만, 오히려 정보가 과도하게 많으면 내용을 받아들이기 어려워집니다. 따라서 서로 다른 정보를 전달할 때는 적절한 여백을 확보하는 것이 중요합니다.</p>
+      <div class="callout">기억할 점 · 여백은 비어 있는 공간이 아니라, 정보를 읽고 이해할 수 있도록 돕는 공간입니다.</div>
+    </article>
+    <article class="panel">
+      <h3>통일성 · 시각적 규칙 만들기</h3>
+      <p>무조건 화려하고 색이 많을수록 좋은 디자인일까요? 색과 요소가 지나치게 많으면 촌스러워 보이거나 시선이 분산되어 어디에 집중해야 할지 모를 수 있습니다. 디자인에서는 색과 이미지의 통일감이 중요합니다.</p>
+      <p><strong>배색 황금비율(60–30–10 법칙)</strong>은 색을 주조색, 보조색, 강조색으로 나누어 사용하는 방법입니다.</p>
+      <div class="color-ratio" aria-label="주조색 60퍼센트, 보조색 30퍼센트, 강조색 10퍼센트">
+        <div class="dominant">60%<br>주조색</div><div class="secondary">30%<br>보조색</div><div class="accent">10%<br>강조</div>
+      </div>
+      <div class="ratio-labels"><span>Dominant Color</span><span>Secondary Color</span><span>Accent</span></div>
+      <p><strong>주조색(60%)</strong>은 화면이나 공간의 배경이 되는 메인 색상으로 전체적인 분위기와 톤을 결정합니다.</p>
+      <p><strong>보조색(30%)</strong>은 주조색을 뒷받침하며 시각적 대비나 깊이를 더해주는 서브 색상입니다.</p>
+      <p><strong>강조색(10%)</strong>은 버튼, 핵심 아이콘, 중요한 텍스트 등 시선을 끌어야 하는 곳에 사용하는 포인트 색상입니다.</p>
+      <p>주조색과 보조색은 색의 진하기나 색상 자체가 크게 동떨어지지 않도록 고르는 편이 안정적입니다. 하늘색과 군청색, 노란색과 주황색처럼 서로 어울리는 색을 활용할 수 있습니다. 색 조합이 어렵다면 AI에게 조합을 제안받는 것도 방법입니다.</p>
+      <p>색뿐 아니라 이미지의 통일성도 중요합니다. 예를 들어 3D 이미지 옆에 손그림 일러스트가 놓이면 의도하지 않은 경우 어색하게 느껴질 수 있습니다. 장식용 이미지 요소는 그림체나 표현 방식을 통일하는 것이 좋습니다.</p>
+      <div class="callout">기억할 점 · 색상과 이미지에 반복되는 규칙을 만들면 화면 전체가 하나의 디자인처럼 보입니다.</div>
+    </article>
+    <article class="panel">
+      <h3>균형과 정렬 · 안정적인 화면 구성</h3>
+      <p>화면의 한쪽에 글이나 이미지가 지나치게 몰려 있으면 미관상 좋지 않을 뿐 아니라 시각적으로 부담을 줄 수 있습니다. 이미지와 글을 좌우, 위아래에 적절히 분배하면 화면의 균형을 잡을 수 있습니다.</p>
+      <p>정렬을 맞추는 것도 중요합니다. 대부분의 디자인 도구와 웹사이트는 정렬 기능을 지원하므로 요소의 시작점과 간격을 맞춰보세요. 멀리서 보았을 때도 화면이 정돈되어 보입니다.</p>
+      <p>또한 전체 화면의 정렬뿐 아니라 하나의 주제에 속하는 글과 이미지를 가까이 모아 그룹처럼 배치하면 정보 사이의 관계가 명확해져 더 효과적으로 전달할 수 있습니다.</p>
+      <div class="callout">기억할 점 · 관련 있는 요소끼리는 모으고, 화면 전체에서는 균형과 정렬을 유지하세요.</div>
+    </article>
+  </section>
+
+  <section id="history">
+    <div class="section-head"><span class="section-no">02</span><div><h2>디자인의 역사</h2><p class="section-sub">산업과 예술의 변화 속에서 발전한 디자인</p></div></div>
+    <article class="panel">
+      <div class="timeline">
+        <div class="event"><div class="year">18세기 후반<br>~ 19세기</div><div><h3>산업혁명</h3><p>대량생산의 등장으로 ‘디자인(Designare, 설계·계획하다)’이라는 개념이 본격적으로 등장했습니다.</p></div></div>
+        <div class="event"><div class="year">19세기 말<br>~ 20세기 초</div><div><h3>아르누보의 등장</h3><p>산업혁명 이후 기계적인 것에 대한 반발로, 자연물의 특징을 건축과 일상용품에 적용한 양식이 나타났습니다.</p></div></div>
+        <div class="event"><div class="year">1907</div><div><h3>독일공작연맹</h3><p>예술과 산업의 결합을 도모하며 예술가, 건축가, 디자이너, 실업가 등이 모인 연합 단체입니다. 기능주의와 표준화의 초석을 마련했습니다.</p></div></div>
+        <div class="event"><div class="year">1919–1933</div><div><h3>바우하우스</h3><p>발터 그로피우스가 설립한 독일의 조형 학교로, 현대 디자인과 실용주의·기능주의 교육의 근간이 되었습니다.</p></div></div>
+        <div class="event"><div class="year">20세기 후반</div><div><h3>포스트모더니즘</h3><p>합리주의와 기능주의에 대한 반작용으로 다양성, 역사적 인용, 유머와 비판적 시각의 중요성이 대두되었습니다.</p></div></div>
+        <div class="event"><div class="year">21세기<br>~ 현대</div><div><h3>현대 디자인</h3><p>앞선 디자인사의 흐름을 바탕으로 디자인은 다양한 분야에서 다양한 형식으로 활용되고 있습니다.</p></div></div>
+      </div>
+    </article>
+  </section>
+
+  <section id="art">
+    <div class="section-head"><span class="section-no">03</span><div><h2>현대 디자인에서 찾아보는 미술사</h2><p class="section-sub">미술의 표현 방식은 오늘날의 시각 언어에도 이어집니다</p></div></div>
+    <article class="panel">
+      <div class="examples">
+        <div class="example"><span class="tag">정보를 단순하게</span><h3>아이콘 · 픽토그램</h3><p>미술과 시각 표현은 사물을 자세히 묘사하는 것에서 나아가 핵심만 남기는 아이콘과 픽토그램으로도 발전했습니다. 직접적인 연관성을 보여주는 사례는 1920년대에 찾아볼 수 있습니다. 오스트리아의 사회학자 오토 노이라트와 디자이너 게르트 아른츠는 복잡한 통계와 사회 정보를 언어가 다른 사람들도 한눈에 알아볼 수 있도록 약 4,000개의 단순한 그림 기호를 만들었습니다.</p></div>
+        <div class="example"><span class="tag">빛과 색채</span><h3>인상주의</h3><p>디자인 예시나 포스터에서 흐릿하고 부드러운 파스텔 톤을 발견할 때가 있습니다. 모네를 비롯한 인상주의 미술의 색채 표현과 닮은 부분입니다. 빛의 번짐이나 따뜻한 감성을 표현할 때 인상주의에서 확립된 부드러운 색채와 색의 대비를 참고할 수 있으며, 이를 통해 의도를 효과적으로 전달하기도 합니다.</p></div>
+        <div class="example"><span class="tag">강렬한 시각 효과</span><h3>팝아트</h3><p>앤디 워홀을 비롯한 팝아트는 현대 디자인에서 빼놓기 어려운 시각적 흐름입니다. 대중문화와 일상적인 이미지를 활용하고 강렬한 색과 반복, 과감한 배치를 사용한 팝아트의 표현 방식은 오늘날 눈길을 끄는 포스터와 그래픽 디자인에서도 찾아볼 수 있습니다.</p></div>
+      </div>
+      <div class="callout">생각해 보기 · 지금 주변에서 볼 수 있는 포스터나 앱 화면에는 어떤 미술사의 표현 방식이 숨어 있을까요?</div>
+    </article>
+  </section>
+  <footer>DESIGN BASIC KIT · 디자인 이론</footer>
+</div>
+</body>
+</html>
